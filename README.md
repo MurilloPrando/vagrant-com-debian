@@ -10,3 +10,5 @@ Como subir a VM:
 
 Para acessar o site escreva localhost:8080 no seu navegador.
 
+Nota: altere o caminho da pasta compartilhada para a sua pasta escolhida.
+
