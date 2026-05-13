@@ -44,7 +44,7 @@ Vagrant.configure("2") do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  config.vm.synced_folder "C:/Users/MASTER/Downloads/vagrant-lab/meu-site", "/var/www/meu-site"
+  config.vm.synced_folder "C:/Users/49114118807/Downloads/mu/vagrant-lab/meu-site", "/var/www/meu-site"
 
   # Disable the default share of the current code directory. Doing this
   # provides improved isolation between the vagrant box and your host
@@ -74,6 +74,13 @@ Vagrant.configure("2") do |config|
      apt-get update
      apt-get upgrade -y
      apt-get install -y apache2
-     
+      # Altera o DocumentRoot
+    sudo sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/meu-site|g' /etc/apache2/sites-available/000-default.conf
+
+    # Reinicia Apache
+   sudo systemctl restart apache2
+
+    # Habilita Apache no boot
+    sudo systemctl enable apache2
    SHELL
 end
