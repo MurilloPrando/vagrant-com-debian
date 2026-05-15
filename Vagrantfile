@@ -74,13 +74,9 @@ Vagrant.configure("2") do |config|
      apt-get update
      apt-get upgrade -y
      apt-get install -y apache2
-      # Altera o DocumentRoot
-    sudo sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/meu-site|g' /etc/apache2/sites-available/000-default.conf
-
-    # Reinicia Apache
-   sudo systemctl restart apache2
-
-    # Habilita Apache no boot
-    sudo systemctl enable apache2
+     sudo sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/meu-site|g' /etc/apache2/sites-available/000-default.conf
+     Reinicia Apache
+     sudo systemctl restart apache2
+     sudo systemctl enable apache2
    SHELL
 end
